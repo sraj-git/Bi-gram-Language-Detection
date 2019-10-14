@@ -1,0 +1,28 @@
+#generate word ngram of a sentence
+sentence = "Cowards die many times before their deaths"
+#n is used for selecting n in ngrams i.e 2 for bigrams
+n=2
+[sentence.split()[i:i+n] for i in range(len(sentence.split())-1)]
+"""
+output:
+[['Cowards', 'die'],
+ ['die', 'many'],
+ ['many', 'times'],
+ ['times', 'before'],
+ ['before', 'their'],
+ ['their', 'deaths']]
+"""
+#generate character ngram for words of sentence
+for word in sentence.split():
+    print [word[i:i+n] for i in range(len(word)-1)]
+
+"""
+output:
+['Co', 'ow', 'wa', 'ar', 'rd', 'ds']
+['di', 'ie']
+['ma', 'an', 'ny']
+['ti', 'im', 'me', 'es']
+['be', 'ef', 'fo', 'or', 're']
+['th', 'he', 'ei', 'ir']
+['de', 'ea', 'at', 'th', 'hs']
+"""
